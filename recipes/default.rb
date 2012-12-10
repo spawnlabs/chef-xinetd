@@ -13,4 +13,5 @@ end
 
 service "xinetd" do
 	action [:enable,:start]
+	supports :reload => true, :restart => true, :status => true
 end
