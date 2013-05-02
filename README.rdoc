@@ -2,10 +2,8 @@
 Sets up a basic xinetd configuration
 
 = REQUIREMENTS:
-This only works for Enterprise Linux
+ Tested against Ubuntu 12.04
 
 = ATTRIBUTES:
 
-
 = USAGE:
-So far as a dependency to the nagios::client_xinetd recipe
