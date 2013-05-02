@@ -17,7 +17,6 @@ directory "/var/lib/tftpboot" do
   group "root"
   mode 00777
   action :create
-  notifies "execute[chmod -R 777 /var/lib/tftpboot]"
 end
 
 execute "chmod -R 777 /var/lib/tftpboot"
