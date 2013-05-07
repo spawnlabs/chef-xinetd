@@ -5,5 +5,7 @@ Sets up a basic xinetd configuration
  Tested against Ubuntu 12.04
 
 = ATTRIBUTES:
+Override the tftpd service template with the following boolean:
+default[:xinetd][:tftpd][:overwrite_service_config] = false
 
 = USAGE:
