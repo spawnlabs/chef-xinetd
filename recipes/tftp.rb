@@ -6,10 +6,12 @@ package "tftpd" do
   action :install
 end
 
-template "/etc/xinetd.d/tftp" do
-  mode 00644
-  source "tftp.erb"
-  notifies :restart, "service[xinetd]"
+if node[:xinetd][:tftpd][:overwrite_service_config] then
+    template "/etc/xinetd.d/tftp" do
+      mode 00644
+      source "tftp.erb"
+      notifies :restart, "service[xinetd]"
+    end
 end
 
 directory "/var/lib/tftpboot" do
