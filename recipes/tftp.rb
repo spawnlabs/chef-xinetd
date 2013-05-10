@@ -1,3 +1,5 @@
+include_recipe "xinetd"
+
 package "tftp" do
   action :install
 end
