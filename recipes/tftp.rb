@@ -6,6 +6,7 @@ end
 
 package "tftpd" do
   action :install
+  notifies :restart, "service[xinetd]"
 end
 
 if node[:xinetd][:tftpd][:overwrite_service_config] then
@@ -21,6 +22,7 @@ directory "/var/lib/tftpboot" do
   group "root"
   mode 00777
   action :create
+  notifies :restart, "service[xinetd]"
 end
 
 execute "chmod -R 777 /var/lib/tftpboot"
